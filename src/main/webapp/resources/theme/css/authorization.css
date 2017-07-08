@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+}
+::-moz-placeholder {
+    color: black;
+}
+:-ms-input-placeholder {
+    color: black;
+}
+:-moz-placeholder {
+    color: black;
+}
+
+.startscreen {
+    position: relative;
+    background: url("../img/startscreen-bg.jpg") no-repeat center / cover fixed;
+}
+
+.startscreen-form {
+    width: 300px;
+    height: 260px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.startscreen-form-fields {
+    list-style: none;
+    padding: 0;
+}
+
+.startscreen-form-fields__field {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.input-text {
+    text-align: center;
+    height: 30px;
+    width: 250px;
+    font-weight: bold;
+    outline: none;
+    background: none;
+    border: none;
+    border-bottom: 1px solid;
+}
+
+.startscreen-form-buttons {
+    margin: 50px 0;
+}
+
+.button {
+    margin: 10px 0;
+    outline: none;
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    font-size: small;
+}
+
+.right-button {
+    position: absolute;
+    right: 20px;
+}
+
+.left-button {
+    position: absolute;
+    left: 20px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.registry {
+    display: none;
+}
+
