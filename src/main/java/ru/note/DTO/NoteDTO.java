@@ -1,4 +1,4 @@
-package ru.note.noteDTO;
+package ru.note.DTO;
 
 import lombok.Builder;
 import lombok.Data;
@@ -10,7 +10,8 @@ import lombok.Data;
 @Builder
 public class NoteDTO {
 
+    private Long id;
     private String content;
     private String name;
-    private Long date;
+    private String date;
 }

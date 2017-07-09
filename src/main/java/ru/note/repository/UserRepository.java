@@ -10,5 +10,5 @@ import ru.note.entity.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
-    public UserEntity findByLogin(String login);
+    UserEntity findByLogin(String login);
 }

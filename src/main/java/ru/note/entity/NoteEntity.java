@@ -1,8 +1,8 @@
 package ru.note.entity;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hsqldb.rights.User;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,20 +16,28 @@ import java.util.List;
 public class NoteEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "NOTE_SEQ",
+            strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "NOTE_SEQ",
+            sequenceName = "NOTE_SEQUENCE",
+            allocationSize=1)
     private Long id;
 
     private String content;
 
-    @OneToOne(targetEntity = UserEntity.class)
-    @JoinColumn(name = "id")
-    private Long creator;
+    @OneToOne
+    @JoinColumn(name = "userentity_id")
+    private UserEntity creator;
 
     private Long createDate;
 
-    @OneToMany(targetEntity = NoteInfoEntity.class)
-    @JoinColumn(name = "id")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "noteinforntity_id")
     private List<NoteInfoEntity> noteInfo;
 
-
+    public NoteEntity(String content, UserEntity creator, Long createDate) {
+        this.content = content;
+        this.creator = creator;
+        this.createDate = createDate;
+    }
 }

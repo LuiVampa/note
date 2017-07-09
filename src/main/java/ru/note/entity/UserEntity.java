@@ -2,10 +2,7 @@ package ru.note.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 
 /**
  * Created by Bucky on 08.07.2017.
@@ -16,10 +13,14 @@ import javax.persistence.UniqueConstraint;
 public class UserEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "USER_SEQ",
+            strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "USER_SEQ",
+            sequenceName = "USER_SEQUENCE",
+            allocationSize=1)
     private Long id;
 
-
+    @Column(unique = true)
     private String login;
 
     private String password;

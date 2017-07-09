@@ -6,6 +6,7 @@
             },
             render: function() {
                 n.collection.each(function() {
+                if (t(this) !== null)
                     t(this).css("height", window.height())
                 })
             }

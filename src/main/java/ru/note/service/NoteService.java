@@ -1,19 +1,21 @@
 package ru.note.service;
 
-import ru.note.entity.UserEntity;
-import ru.note.exception.IncorrectPasswordException;
-import ru.note.noteDTO.NoteDTO;
+import ru.note.DTO.NoteDTO;
 
 import java.util.List;
 
 /**
- * Created by Bucky on 09.07.2017.
+ * Created by Bucky on 10.07.2017.
  */
 public interface NoteService {
 
+    void addNote(Long id, String note);
 
-    void registerUser(String login, String password);
+    List<NoteDTO> loadNotes(Integer page);
 
+    Long pageCount();
 
-    List<NoteDTO> login(String login, String password) throws IncorrectPasswordException;
+    void removeNote(Long noteId);
+
+    void editNote(Long id, Long noteId, String content);
 }

@@ -3,6 +3,7 @@ package ru.note.entity;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hsqldb.rights.User;
 
 import javax.persistence.*;
 
@@ -15,12 +16,21 @@ import javax.persistence.*;
 public class NoteInfoEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "NOTE_INFO_SEQ",
+            strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "NOTE_INFO_SEQ",
+            sequenceName = "NOTE_INFO_SEQUENCE",
+            allocationSize=1)
     private Long id;
 
     private Long changeDate;
 
-    @OneToOne(targetEntity = UserEntity.class)
-    @JoinColumn(name = "id")
-    private Long changer;
+    @OneToOne()
+    @JoinColumn(name = "userentity_id")
+    private UserEntity changer;
+
+    public NoteInfoEntity(Long changeDate, UserEntity changer) {
+        this.changeDate = changeDate;
+        this.changer = changer;
+    }
 }

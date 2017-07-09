@@ -15,8 +15,20 @@ body {
     color: black;
 }
 
+.transition {
+    -webkit-transition: .15s linear;
+    -moz-transition: .15s linear;
+    -ms-transition: .15s linear;
+    -o-transition: .15s linear;
+    transition: .15s linear;
+}
+
+.transition:active,
+.transition:focus{
+    outline: none;
+}
+
 .startscreen {
-    position: relative;
     background: url("../img/startscreen-bg.jpg") no-repeat center / cover fixed;
 }
 
@@ -29,6 +41,14 @@ body {
     left: 0;
     right: 0;
     margin: auto;
+}
+
+.startscreen-form-error {
+    display: none;
+    text-transform: uppercase;
+    font-size: small;
+    text-align: center;
+    color: red;
 }
 
 .startscreen-form-fields {
@@ -48,12 +68,12 @@ body {
     font-weight: bold;
     outline: none;
     background: none;
-    border: none;
-    border-bottom: 1px solid;
+    border: 1px solid;
+    border-bottom-left-radius: 10px;
 }
 
 .startscreen-form-buttons {
-    margin: 50px 0;
+    margin: 60px 0;
 }
 
 .button {
@@ -63,6 +83,7 @@ body {
     border: none;
     text-transform: uppercase;
     font-size: small;
+    font-weight: bold;
 }
 
 .right-button {
@@ -77,6 +98,7 @@ body {
 
 .button:hover {
     cursor: pointer;
+    color: brown;
 }
 
 .registry {
