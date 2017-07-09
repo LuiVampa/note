@@ -1,13 +1,19 @@
 package ru.note.service;
 
-import org.springframework.stereotype.Service;
+import ru.note.entity.UserEntity;
+import ru.note.exception.IncorrectPasswordException;
+import ru.note.noteDTO.NoteDTO;
+
+import java.util.List;
 
 /**
- * Created by Bucky on 08.07.2017.
+ * Created by Bucky on 09.07.2017.
  */
-@Service
-public class NoteService {
+public interface NoteService {
 
 
+    void registerUser(String login, String password);
 
+
+    List<NoteDTO> login(String login, String password) throws IncorrectPasswordException;
 }

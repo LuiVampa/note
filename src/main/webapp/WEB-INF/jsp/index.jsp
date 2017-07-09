@@ -16,7 +16,7 @@
 <body>
     <section class="startscreen fullscreen">
         <div class="startscreen-form login">
-            <form method="post" action="/note/?item">
+            <form method="post" action="/note/login">
                 <ul class="startscreen-form-fields">
                     <li class="startscreen-form-fields__field">
                         <input type="text" name="login" placeholder="Логин" class="input-text">

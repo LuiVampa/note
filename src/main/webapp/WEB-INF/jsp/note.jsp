@@ -4,14 +4,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <title>Note</title>
 
-    <link href="css/note.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/note.css" />" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/jquery.ui.js"></script>
-    <script src="js/jquery.add-note.js"></script>
+    <script src="<c:url value="/resources/js/jquery.ui.js" />"></script>
+    <script src="<c:url value="/resources/js/jquery.add-note.js" />"></script>
 </head>
 
 <body>
